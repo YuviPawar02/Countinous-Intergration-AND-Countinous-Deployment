@@ -289,8 +289,18 @@ app.get("/dashboard", verifyToken, (req, res) => {
 });
 
 
+app.get("/employee", verifyToken, (req, res) => {
+  res.json({
+    message: "Welcome Dashboard",
+    user: req.user
+  });
+});
+
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server Security running on port ${PORT}`);
 });
+
+
 
